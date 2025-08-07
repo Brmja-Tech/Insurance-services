@@ -35,7 +35,45 @@
     <link rel="stylesheet" href="assets/css/lib/slick.css" />
     <!-- main css -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    
+
+    <style>
+      /* Responsive table styles */
+      .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      @media (max-width: 768px) {
+        .table-responsive {
+          font-size: 14px;
+        }
+
+        .table-responsive .table {
+          min-width: 600px;
+        }
+
+        .table-responsive th,
+        .table-responsive td {
+          white-space: nowrap;
+          padding: 8px 12px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .table-responsive {
+          font-size: 12px;
+        }
+
+        .table-responsive .table {
+          min-width: 500px;
+        }
+
+        .table-responsive th,
+        .table-responsive td {
+          padding: 6px 8px;
+        }
+      }
+    </style>
   </head>
   <body>
     <aside class="sidebar">
@@ -45,10 +83,10 @@
       <div>
         <a href="index.html" class="sidebar-logo">
           <img
-            src="assets/images/logo.jfif"  
+            src="assets/images/logo.jfif"
             alt="site logo"
             class="light-logo"
-            style="width: 50px; height: 100px;"
+            style="width: 50px; height: 100px"
           />
           <img
             src="assets/images/logo-light.png"
@@ -66,31 +104,43 @@
         <ul class="sidebar-menu" id="sidebar-menu">
           <li class="dropdown">
             <a href="javascript:void(0)">
-              <iconify-icon icon="solar:home-smile-angle-outline" class="menu-icon"></iconify-icon>
+              <iconify-icon
+                icon="solar:home-smile-angle-outline"
+                class="menu-icon"
+              ></iconify-icon>
               <span>Dashboard</span>
             </a>
             <ul class="sidebar-submenu">
               <li>
-                <a href="index.html"><i class="ri-circle-fill circle-icon text-primary-600 w-auto"></i> AI</a>
+                <a href="index.html"
+                  ><i
+                    class="ri-circle-fill circle-icon text-primary-600 w-auto"
+                  ></i>
+                  AI</a
+                >
               </li>
             </ul>
           </li>
-        
-        
+
           <li class="dropdown">
             <a href="javascript:void(0)">
-              <iconify-icon icon="mingcute:storage-line" class="menu-icon"></iconify-icon>
-              <span>Services</span> 
+              <iconify-icon
+                icon="mingcute:storage-line"
+                class="menu-icon"
+              ></iconify-icon>
+              <span>Services</span>
             </a>
             <ul class="sidebar-submenu">
-            
               <li>
-                <a href="insurancedocumentsservices.html"><i class="ri-circle-fill circle-icon text-warning-main w-auto"></i> Insurance Documents Services</a>
+                <a href="insurancedocumentsservices.html"
+                  ><i
+                    class="ri-circle-fill circle-icon text-warning-main w-auto"
+                  ></i>
+                  Insurance Documents Services</a
+                >
               </li>
             </ul>
           </li>
-         
-          
         </ul>
       </div>
     </aside>
@@ -921,83 +971,85 @@
             </button>
           </div>
           <div class="card-body">
-            <table
-              class="table bordered-table mb-0"
-              id="dataTable"
-              data-page-length="10"
-            >
-              <thead>
-                <tr>
-                  <th scope="col">
-                    <div
-                      class="form-check style-check d-flex align-items-center"
-                    >
-                      <input class="form-check-input" type="checkbox" />
-                      <label class="form-check-label"> S.L </label>
-                    </div>
-                  </th>
-                  <th scope="col">كود المشروع</th>
-                  <th scope="col">اسم الموظف</th>
-                  <th scope="col">اسم العميل</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div
-                      class="form-check style-check d-flex align-items-center"
-                    >
-                      <input class="form-check-input" type="checkbox" />
-                      <label class="form-check-label"> 01 </label>
-                    </div>
-                  </td>
-                  <td>
-                    <a href="javascript:void(0)" class="text-primary-600"
-                      >#526534</a
-                    >
-                  </td>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <h6 class="text-md mb-0 fw-medium flex-grow-1">
-                        أحمد محمد
-                      </h6>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="d-flex align-items-center">
-                      <h6 class="text-md mb-0 fw-medium flex-grow-1">
-                        محمد علي
-                      </h6>
-                    </div>
-                  </td>
-                  <td>
-                    <a
-                      href="javascript:void(0)"
-                      class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
-                      data-bs-toggle="modal"
-                      data-bs-target="#viewProjectModal"
-                    >
-                      <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
-                    </a>
-                    <a
-                      href="javascript:void(0)"
-                      class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    >
-                      <iconify-icon icon="lucide:edit"></iconify-icon>
-                    </a>
-                    <a
-                      href="javascript:void(0)"
-                      class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
-                    >
-                      <iconify-icon
-                        icon="mingcute:delete-2-line"
-                      ></iconify-icon>
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table
+                class="table bordered-table mb-0"
+                id="dataTable"
+                data-page-length="10"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <div
+                        class="form-check style-check d-flex align-items-center"
+                      >
+                        <input class="form-check-input" type="checkbox" />
+                        <label class="form-check-label"> S.L </label>
+                      </div>
+                    </th>
+                    <th scope="col">كود المشروع</th>
+                    <th scope="col">اسم الموظف</th>
+                    <th scope="col">اسم العميل</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div
+                        class="form-check style-check d-flex align-items-center"
+                      >
+                        <input class="form-check-input" type="checkbox" />
+                        <label class="form-check-label"> 01 </label>
+                      </div>
+                    </td>
+                    <td>
+                      <a href="javascript:void(0)" class="text-primary-600"
+                        >#526534</a
+                      >
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <h6 class="text-md mb-0 fw-medium flex-grow-1">
+                          أحمد محمد
+                        </h6>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <h6 class="text-md mb-0 fw-medium flex-grow-1">
+                          محمد علي
+                        </h6>
+                      </div>
+                    </td>
+                    <td>
+                      <a
+                        href="javascript:void(0)"
+                        class="w-32-px h-32-px bg-primary-light text-primary-600 rounded-circle d-inline-flex align-items-center justify-content-center"
+                        data-bs-toggle="modal"
+                        data-bs-target="#viewProjectModal"
+                      >
+                        <iconify-icon icon="iconamoon:eye-light"></iconify-icon>
+                      </a>
+                      <a
+                        href="javascript:void(0)"
+                        class="w-32-px h-32-px bg-success-focus text-success-main rounded-circle d-inline-flex align-items-center justify-content-center"
+                      >
+                        <iconify-icon icon="lucide:edit"></iconify-icon>
+                      </a>
+                      <a
+                        href="javascript:void(0)"
+                        class="w-32-px h-32-px bg-danger-focus text-danger-main rounded-circle d-inline-flex align-items-center justify-content-center"
+                      >
+                        <iconify-icon
+                          icon="mingcute:delete-2-line"
+                        ></iconify-icon>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
